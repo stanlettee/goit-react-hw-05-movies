@@ -2,10 +2,10 @@ import './App.css';
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { Home } from "./components/Home"
 import { Movies } from './components/Movies'
-import { Reviews } from './components/Reviews'
-import { MovieDetails } from './components/MovieDetails'
-import { Cast } from './components/Cast'
-import { NotFound } from './components/NotFound'
+// import { Reviews } from './components/Reviews'
+// import { MovieDetails } from './components/MovieDetails'
+// import { Cast } from './components/Cast'
+// import { NotFound } from './components/NotFound'
 
 
 function App() {
@@ -28,10 +28,10 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<Movies />} />
-            <Route path="/movies/:movieId" element={<MovieDetails />} />
+            {/* <Route path="/movies/:movieId" element={<MovieDetails />} />
             <Route path="/movies/:movieId/cast" element={<Cast />} />
             <Route path="/movies/:movieId/reviews" element={<Reviews />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </main>
       {/* <footer className='footer'>
