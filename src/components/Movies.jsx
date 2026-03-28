@@ -1,9 +1,12 @@
 import styles from './styles/Movies.module.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom'
+import { MovieContext } from "./MovieContext";
+import { useContext } from 'react';
 
 export const Movies = () => {
-  const [movies, setMovies] = useState([])
+  const { setMovies, movies } = useContext(MovieContext);
   const [search, setSearch] = useState('')
   const apiKey = '71c3daa9589b3ba88d7c5d90ff9276b7'
 
@@ -22,6 +25,7 @@ export const Movies = () => {
       },
     })
     .then(res => {
+      console.log(res.data.results)
       setMovies(res.data.results)
     })
     .catch(err => console.error(err))
@@ -41,7 +45,11 @@ export const Movies = () => {
         <ul className={styles.list}>
           {movies.map(movie => (
             <li className={styles.item} key={movie.id}>
-              <h3 className={styles.movieTitle}>{movie.title}</h3>
+              <NavLink to={`/movies/${movie.id}`} className={styles.link}>
+                <p className={styles.title}>
+                  {movie.title}
+                </p>
+              </NavLink>
             </li>
           ))}
         </ul>

@@ -2,13 +2,20 @@ import './App.css';
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { Home } from "./components/Home"
 import { Movies } from './components/Movies'
+import { MovieDetails } from './components/MovieDetails'
 // import { Reviews } from './components/Reviews'
 // import { MovieDetails } from './components/MovieDetails'
 // import { Cast } from './components/Cast'
 // import { NotFound } from './components/NotFound'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { MovieProvider } from "./components/MovieContext";
 
 
 function App() {
+    const [tranding, setTranding] = useState([])
+    
+
   return (
     <div className="App">
       <header className='header'>
@@ -25,14 +32,19 @@ function App() {
         </div>
       </header>
       <main>
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/movies" element={<Movies />} />
-            {/* <Route path="/movies/:movieId" element={<MovieDetails />} />
-            <Route path="/movies/:movieId/cast" element={<Cast />} />
-            <Route path="/movies/:movieId/reviews" element={<Reviews />} />
-            <Route path="*" element={<NotFound />} /> */}
-        </Routes>
+        <MovieProvider>
+          <Routes>
+              <Route path="/" element={<Home />} />
+
+                  <Route path="/movies" element={<Movies />} />
+                  <Route path="/movies/:movieId" element={<MovieDetails />} />
+                
+
+              {/* <Route path="/movies/:movieId/cast" element={<Cast />} />
+              <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+              <Route path="*" element={<NotFound />} /> */}
+          </Routes>
+        </MovieProvider>
       </main>
       {/* <footer className='footer'>
         <div className='footer-container container'>
