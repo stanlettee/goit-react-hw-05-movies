@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom';
 import { MovieContext } from "./MovieContext";
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
     const { movieId } = useParams()
     const { movies } = useContext(MovieContext)
     const movie = movies.find(movie => movie.id === Number(movieId));
@@ -24,3 +24,5 @@ export const MovieDetails = () => {
         </section>
     )
 }
+
+export default MovieDetails

@@ -2,7 +2,7 @@ import styles from './styles/Home.module.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-export const Home = () => {
+const Home = () => {
     const [tranding, setTranding] = useState([])
     const apiKey = '71c3daa9589b3ba88d7c5d90ff9276b7'
     useEffect(() => {
@@ -36,3 +36,5 @@ export const Home = () => {
         </section>
     )
 }
+
+export default Home

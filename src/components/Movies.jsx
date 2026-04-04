@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { MovieContext } from "./MovieContext";
 import { useContext } from 'react';
 
-export const Movies = () => {
+const Movies = () => {
   const { setMovies, movies } = useContext(MovieContext);
   const [search, setSearch] = useState('')
   const apiKey = '71c3daa9589b3ba88d7c5d90ff9276b7'
@@ -59,5 +59,5 @@ export const Movies = () => {
 }
 
 
-
+export default Movies
 
