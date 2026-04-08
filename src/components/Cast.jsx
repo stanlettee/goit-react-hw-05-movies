@@ -16,7 +16,7 @@ const Reviews = () => {
     return (
         <section className={styles.cast}>
             <h1>Cast of {movie.title}</h1>
-            <p>Cast of the movie is not added yet to this website</p>
+            <p>Cast of the movie is not added to this website yet</p>
         </section>
     )
 }
