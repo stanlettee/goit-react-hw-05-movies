@@ -31,6 +31,14 @@ const NotFound = lazy(() =>
   import('./components/NotFound')
 )
 
+const Cast = lazy(() => 
+  import('./components/Cast')
+)
+
+const Reviews = lazy(() => 
+  import('./components/Reviews')
+)
+
 function App() {
     const [tranding, setTranding] = useState([])
     
@@ -70,13 +78,10 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-
-                    <Route path="/movies" element={<Movies />} />
-                    <Route path="/movies/:movieId" element={<MovieDetails />} />
-                  
-
-                {/* <Route path="/movies/:movieId/cast" element={<Cast />} />
-                <Route path="/movies/:movieId/reviews" element={<Reviews />} /> */}
+                  <Route path="/movies" element={<Movies />} />
+                  <Route path="/movies/:movieId" element={<MovieDetails />} />
+                  <Route path="/movies/:movieId/cast" element={<Cast />} />
+                  <Route path="/movies/:movieId/reviews" element={<Reviews />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
           
